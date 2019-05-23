@@ -2,6 +2,8 @@
 .headers	on
 .nullvalue	NULL
 
+-- 2 Todas as encomendas numa certa data contendo Amaciador
+
 SELECT * FROM Encomenda
   WHERE Encomenda.idEncomenda IN (SELECT Encomenda.idEncomenda FROM
   QuantidadePedida, Encomenda, Produto

@@ -1,6 +1,9 @@
 .mode	columns
-.headers	on
+.headers ON
 .nullvalue	NULL
+
+-- 4
+-- Todos os produtos com stock maior que 70
 
 SELECT * FROM Produto
   WHERE codigoBarras IN (

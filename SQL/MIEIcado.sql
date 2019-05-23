@@ -6,6 +6,327 @@
 PRAGMA foreign_keys = off;
 BEGIN TRANSACTION;
 
+-- Table: Produto
+DROP TABLE IF EXISTS Produto;
+
+CREATE TABLE Produto (
+    codigoBarras INTEGER     NOT NULL
+                             PRIMARY KEY AUTOINCREMENT
+                             CHECK (codigoBarras > 0) 
+                             DEFAULT (1),
+    nome         STRING      NOT NULL,
+    marca        STRING,
+    preço        REAL (2, 2) CHECK (preço > 0) 
+                             DEFAULT (1) 
+                             NOT NULL,
+    desconto     REAL        CHECK (desconto >= 0 AND 
+                                    desconto <= 100) 
+                             DEFAULT (0) 
+                             NOT NULL
+);
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        1237,
+                        'Coca-Cola',
+                        'Coca-Cola',
+                        2.25,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        1247,
+                        'Presunto',
+                        NULL,
+                        1.99,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        12316,
+                        'Manteiga',
+                        'Becel',
+                        1.25,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        12386,
+                        'Shampô',
+                        'Pantene',
+                        9.4,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        52839,
+                        'Vinho do Porto',
+                        'Caves do Norte',
+                        15.6,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        68356,
+                        'Toalhetes',
+                        NULL,
+                        0.99,
+                        10.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        68469,
+                        'Leite de Soja',
+                        'Linga',
+                        1.23,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        84593,
+                        'Amaciador',
+                        'Linik-for-men',
+                        19.99,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        97142,
+                        'Pasta dos Dentes',
+                        'Colgate',
+                        3.5,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        97256,
+                        'Murtadela',
+                        NULL,
+                        2.5,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        123412,
+                        'Paio',
+                        NULL,
+                        1.4,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        230867,
+                        'Compal de Manga',
+                        'Compal',
+                        2.0,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        356456,
+                        'Bife do Vazio',
+                        NULL,
+                        7.0,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        432627,
+                        'Cerveja',
+                        'SuperBock',
+                        2.79,
+                        25.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        1238126,
+                        'Luvas Estereis',
+                        'Limp',
+                        0.99,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        1316798,
+                        'Agua Mineral Natural',
+                        'Fastio',
+                        0.27,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        2624688,
+                        'Leite Magro',
+                        'Agros',
+                        0.9,
+                        30.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        23489569,
+                        'Sabonete',
+                        'Rosas Inc.',
+                        1.0,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        43879894,
+                        'Fiambre de Peru',
+                        'Nacional',
+                        1.69,
+                        0.0
+                    );
+
+INSERT INTO Produto (
+                        codigoBarras,
+                        nome,
+                        marca,
+                        preço,
+                        desconto
+                    )
+                    VALUES (
+                        257989382,
+                        'Iogurte de Pessego',
+                        'Agros',
+                        4.49,
+                        0.0
+                    );
+
+
+
 -- Table: Bebidas
 DROP TABLE IF EXISTS Bebidas;
 
@@ -879,324 +1200,6 @@ INSERT INTO Pessoa (
                    );
 
 
--- Table: Produto
-DROP TABLE IF EXISTS Produto;
-
-CREATE TABLE Produto (
-    codigoBarras INTEGER     NOT NULL
-                             PRIMARY KEY AUTOINCREMENT
-                             CHECK (codigoBarras > 0) 
-                             DEFAULT (1),
-    nome         STRING      NOT NULL,
-    marca        STRING,
-    preço        REAL (2, 2) CHECK (preço > 0) 
-                             DEFAULT (1) 
-                             NOT NULL,
-    desconto     REAL        CHECK (desconto >= 0 AND 
-                                    desconto <= 100) 
-                             DEFAULT (0) 
-                             NOT NULL
-);
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        1237,
-                        'Coca-Cola',
-                        'Coca-Cola',
-                        2.25,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        1247,
-                        'Presunto',
-                        NULL,
-                        1.99,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        12316,
-                        'Manteiga',
-                        'Becel',
-                        1.25,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        12386,
-                        'Shampô',
-                        'Pantene',
-                        9.4,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        52839,
-                        'Vinho do Porto',
-                        'Caves do Norte',
-                        15.6,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        68356,
-                        'Toalhetes',
-                        NULL,
-                        0.99,
-                        10.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        68469,
-                        'Leite de Soja',
-                        'Linga',
-                        1.23,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        84593,
-                        'Amaciador',
-                        'Linik-for-men',
-                        19.99,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        97142,
-                        'Pasta dos Dentes',
-                        'Colgate',
-                        3.5,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        97256,
-                        'Murtadela',
-                        NULL,
-                        2.5,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        123412,
-                        'Paio',
-                        NULL,
-                        1.4,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        230867,
-                        'Compal de Manga',
-                        'Compal',
-                        2.0,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        356456,
-                        'Bife do Vazio',
-                        NULL,
-                        7.0,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        432627,
-                        'Cerveja',
-                        'SuperBock',
-                        2.79,
-                        25.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        1238126,
-                        'Luvas Estereis',
-                        'Limp',
-                        0.99,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        1316798,
-                        'Agua Mineral Natural',
-                        'Fastio',
-                        0.27,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        2624688,
-                        'Leite Magro',
-                        'Agros',
-                        0.9,
-                        30.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        23489569,
-                        'Sabonete',
-                        'Rosas Inc.',
-                        1.0,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        43879894,
-                        'Fiambre de Peru',
-                        'Nacional',
-                        1.69,
-                        0.0
-                    );
-
-INSERT INTO Produto (
-                        codigoBarras,
-                        nome,
-                        marca,
-                        preço,
-                        desconto
-                    )
-                    VALUES (
-                        257989382,
-                        'Iogurte de Pessego',
-                        'Agros',
-                        4.49,
-                        0.0
-                    );
 
 
 -- Table: QuantidadePedida

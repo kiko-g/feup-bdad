@@ -1,12 +1,15 @@
 .mode	columns
-.headers	on
+.headers ON
 .nullvalue	NULL
+
+-- 5
+-- Todas as encomendas feitas para o endereço de um cliente
 
 SELECT * FROM Encomenda
   WHERE idEncomenda IN (
     SELECT idEncomenda FROM
       Entrega, (Cliente INNER JOIN Pessoa 
-        ON Cliente.NIF = Pessoa.NIF) AS A
-          WHERE Entrega.morada = A.morada
+        ON Cliente.NIF = Pessoa.NIF) AS ONE
+          WHERE Entrega.morada = ONE.morada
   )
 ;
