@@ -4,6 +4,8 @@
 
 -- 2 Todas as encomendas feitas em Abril contendo Amaciador
 
+CREATE VIEW encomendasAbrilComAmaciador
+
 SELECT * FROM Encomenda
   WHERE Encomenda.idEncomenda IN (SELECT Encomenda.idEncomenda FROM
   QuantidadePedida, Encomenda, Produto

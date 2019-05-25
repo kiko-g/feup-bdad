@@ -10,4 +10,4 @@ SELECT * FROM Cliente
     SELECT NIF FROM Encomenda
       WHERE idTransportadora IN (
         SELECT idTransportadora FROM Transportadora
-          WHERE nome LIKE 'Runner'     ));
+          WHERE nome LIKE 'Runner'    ));
