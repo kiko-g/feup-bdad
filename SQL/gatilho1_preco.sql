@@ -11,8 +11,11 @@ WHEN(NEW.idTransportadora IS NOT NULL)
 END;
 SELECT
 CASE
-WHEN()
-END;
+WHEN(NEW.preçoFinal > 0)
+  UPDATE Encomenda
+    SET preçoFinal = (SELECT preço FROM Transportadora 
+                        WHERE Transportadora.idTransportadora = NEW.idTransportadora)
+  WHERE NEW.idEncomenda = Encomenda.idEncomenda
 END;
 
 CREATE TRIGGER preco_B_Update_Encomenda
