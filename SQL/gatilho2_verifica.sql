@@ -1,28 +1,46 @@
-//update do stock
+.mode columns
+.header on
+.nullvalue NULL
 
-CREATE TRIGGER preco_V_Encomenda
-AFTER INSERT ON Encomenda
-BEGIN
-  DECLARE @PCount REAL;
+PRAGMA foreign_keys = ON;
 
-  SET @PCount = preçoFinal - (SELECT preço FROM Transportadora 
-                        WHERE Transportadora.idTransportadora = NEW.idTransportadora)
-                        + NEW.quantidade * (SELECT preço FROM Produto 
-                        WHERE Produto.codigoBarras = (SELECT codigoBarras FROM Entrega WHERE Entrega.idEncomenda = NEW.idEncomenda))
-                         * (1 - (SELECT desconto FROM Produto 
-                        WHERE Produto.codigoBarras = (SELECT codigoBarras FROM Entrega WHERE Entrega.idEncomenda = NEW.idEncomenda)) / 100)
-  IF @PCount = 0
-    END;
-  SELECT raise(rollback, 'Preço Invalido');
-END;
 
-CREATE TRIGGER preco_V_Update_Encomenda
-AFTER UPDATE ON Encomenda
-FOR EACH ROW
-WHEN(NEW.idTransportadora IS NOT NULL)
-BEGIN
-  UPDATE Encomenda
-    SET preçoFinal -= (SELECT preço FROM Transportadora 
-                        WHERE Transportadora.idTransportadora = NEW.idTransportadora)
-  WHERE NEW.idEncomenda = Encomenda.idEncomenda
-END;
+.print ''
+.print 'Preço da encomenda:'
+
+INSERT INTO Encomenda(
+                      idEncomenda,
+                      NIF,
+                      idLoja,
+                      data,
+                      metodoPagamento,
+                      idTransportadora,
+                      preçoFinal)
+               VALUES(300,
+                      856123909,
+                      1,
+                      DEFAULT,
+                      'Dinheiro',
+                      NULL,
+                      0)
+;
+
+SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco Final da Encomenda' 
+  FROM Encomenda WHERE idEncomenda = 300;
+
+.print ''
+.print 'Preço da encomenda após adicao do produto Manteiga com quantidade 4:'
+
+INSERT INTO QuantidadePedida(
+                             codigoBarras,
+                             idEncomenda,
+                             quantidade)
+                      VALUES(
+                             12316,
+                             300,
+                             4)
+;
+
+SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco Final da Encomenda' 
+  FROM Encomenda WHERE idEncomenda = 300;
+
