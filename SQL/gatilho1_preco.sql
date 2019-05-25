@@ -1,12 +1,18 @@
 CREATE TRIGGER preco_Encomenda
 AFTER INSERT ON Encomenda
 FOR EACH ROW
-WHEN(NEW.idTransportadora IS NOT NULL)
 BEGIN
+CASE
+WHEN(NEW.idTransportadora IS NOT NULL)
   UPDATE Encomenda
     SET preçoFinal = (SELECT preço FROM Transportadora 
                         WHERE Transportadora.idTransportadora = NEW.idTransportadora)
   WHERE NEW.idEncomenda = Encomenda.idEncomenda
+END;
+SELECT
+CASE
+WHEN()
+END;
 END;
 
 CREATE TRIGGER preco_B_Update_Encomenda
