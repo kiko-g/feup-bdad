@@ -5,7 +5,6 @@
 -- 6
 -- Preco final medio das encomendas do cliente anterior
 
-SELECT ONE.NIF, ONE.email, avg(preçoFinal) FROM
+SELECT A.NIF, A.email, avg(preçoFinal) FROM
 (Cliente INNER JOIN Encomenda ON Cliente.NIF = Encomenda.NIF)
-AS ONE
-GROUP BY ONE.NIF;
+AS A GROUP BY A.NIF;
