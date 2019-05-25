@@ -4,6 +4,7 @@
 
 -- 1 Todos os pedidos de apoio por um certo cliente
 
+CREATE VIEW viewClientsWithTickets AS
 SELECT idPedido, data, funcionarioNIF, clienteNIF, email, nome, morada, telemovel FROM
   (Suporte
   INNER JOIN Cliente
