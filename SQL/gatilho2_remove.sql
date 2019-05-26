@@ -4,4 +4,4 @@
 
 PRAGMA foreign_keys = ON;
 
-DROP TRIGGER IF EXISTS preçoInsertQuantidade;
+DROP TRIGGER IF EXISTS insertQuantidade;

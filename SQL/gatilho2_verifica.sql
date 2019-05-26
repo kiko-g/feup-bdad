@@ -12,16 +12,10 @@ INSERT INTO Encomenda(
                       idEncomenda,
                       NIF,
                       idLoja,
-                      data,
-                      metodoPagamento,
-                      idTransportadora,
                       preçoFinal)
                VALUES(300,
                       856123909,
                       1,
-                      DEFAULT,
-                      'Dinheiro',
-                      NULL,
                       0)
 ;
 
@@ -29,7 +23,7 @@ SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco Final da Encomend
   FROM Encomenda WHERE idEncomenda = 300;
 
 .print ''
-.print 'Preço da encomenda após adicao do produto Manteiga com quantidade 4:'
+.print 'Preço da encomenda após adicao do produto Manteiga com quantidade 4 e preço 1.25:'
 
 INSERT INTO QuantidadePedida(
                              codigoBarras,
