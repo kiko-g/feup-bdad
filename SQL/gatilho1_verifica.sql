@@ -4,45 +4,30 @@
 
 PRAGMA foreign_keys = ON;
 
+.print ''
+.print 'Cliente NIF = 969762934:'
+
+SELECT NIF, morada AS 'Morada' FROM Pessoa
+WHERE NIF = 969762934;
 
 .print ''
-.print 'Preço da encomenda: '
+.print 'Preço da nova encomenda com ID da Transportadora = 2:'
 
-INSERT INTO Encomenda(
-                      idEncomenda,
-                      NIF,
-                      idLoja,
-                      data,
-                      metodoPagamento,
-                      idTransportadora,
-                      preçoFinal)
-               VALUES(10,
-                      913453454,
-                      1,
-                      '2016-04-17 12:17:26',
-                      'Dinheiro',
-                      2,
-                      0)
-;
+INSERT INTO Encomenda(idEncomenda, NIF, idLoja, idTransportadora, preçoFinal) VALUES(10, 969762934, 1, 2, 0);
 
-SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco Final da Encomenda' 
+SELECT idEncomenda AS 'ID da Encomenda', NIF, preçoFinal AS 'Preco Final da Encomenda' 
   FROM Encomenda WHERE idEncomenda = 10;
 
 .print ''
-.print 'Preço da encomenda após adicao da taxa de transporte: '
+.print 'Preço da transportadora:'
 
-INSERT INTO Transportadora(
-                               idTransportadora,
-                               nome,
-                               telefone,
-                               preço
-                           )
-                           VALUES (
-                               2,
-                               'TNT',
-                               242465782,
-                               4.0
-                           );
+SELECT idTransportadora AS 'ID da Transportadora', preço AS 'Preço' 
+  FROM Transportadora WHERE idTransportadora = 2;
 
-SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco Final da Encomenda' 
-  FROM Encomenda WHERE idEncomenda = 10;
+.print ''
+.print 'Novo Tuplo em Entrega:'
+
+SELECT idTransportadora AS 'ID da Transportadora', idEncomenda AS 'ID da Encomenda',
+        morada AS 'Morada da Entrega'
+FROM Entrega WHERE idEncomenda = 10;
+

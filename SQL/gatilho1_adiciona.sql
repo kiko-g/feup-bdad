@@ -17,7 +17,7 @@ BEGIN
     SET preçoFinal = (SELECT preço FROM Transportadora 
                         WHERE Transportadora.idTransportadora = NEW.idTransportadora)
   WHERE NEW.idEncomenda = Encomenda.idEncomenda;
-  INSERT INTO Entrega(idTrasportadora, idEncomenda, morada)
+  INSERT INTO Entrega(idTransportadora, idEncomenda, morada)
               VALUES (NEW.idTransportadora, NEW.idEncomenda, (SELECT morada from Pessoa WHERE Pessoa.NIF = NEW.NIF));
 END;
     
