@@ -17,4 +17,4 @@ GROUP BY codigoBarras;
 
 SELECT A.codigoBarras AS 'Codigo de Barras', nome AS 'Nome', marca AS 'Marca', preço AS 'Preço', desconto AS 'Desconto'
   FROM (Produto INNER JOIN (SELECT numeroComprasProduto.codigoBarras, MAX('quantidade') FROM numeroComprasProduto) AS maxProduto 
-                          ON maxProduto.codigoBarras = Produto.codigoBarras) AS A; 
+                          ON maxProduto.codigoBarras = Produto.codigoBarras) AS A;

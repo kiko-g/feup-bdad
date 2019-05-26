@@ -12,20 +12,22 @@ CREATE TRIGGER preco_Encomenda
 AFTER INSERT ON Encomenda
 FOR EACH ROW
 BEGIN
+SELECT
 CASE
 WHEN(NEW.idTransportadora IS NOT NULL)
-  UPDATE Encomenda
+    UPDATE Encomenda
     SET preçoFinal = (SELECT preço FROM Transportadora 
-                        WHERE Transportadora.idTransportadora = NEW.idTransportadora)
-  WHERE NEW.idEncomenda = Encomenda.idEncomenda
+    WHERE Transportadora.idTransportadora = NEW.idTransportadora)
+    WHERE NEW.idEncomenda = Encomenda.idEncomenda
 
 AFTER INSERT ON Encomenda
 FOR EACH ROW
 BEGIN
+SELECT
 CASE
 WHEN(NEW.idTransportadora IS NOT NULL)
     INSERT INTO Entrega 
-    VALUES (NEW.idTransportadora, NEW.idEncomenda, SELECT morada from cliente WHERE cliente.nif = NEW.nif)
+    VALUES (NEW.idTransportadora, NEW.idEncomenda, SELECT morada from cliente WHERE cliente.NIF = NEW.NIF)
 END;
 
     

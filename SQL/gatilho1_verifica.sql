@@ -1,12 +1,12 @@
 .mode columns
-.header on
+.headers on
 .nullvalue NULL
 
 PRAGMA foreign_keys = ON;
 
 
 .print ''
-.print 'Preço da encomenda:'
+.print 'Preço da encomenda: '
 
 INSERT INTO Encomenda(
                       idEncomenda,
@@ -29,7 +29,7 @@ SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco Final da Encomend
   FROM Encomenda WHERE idEncomenda = 10;
 
 .print ''
-.print 'Preço da encomenda após adicao da taxa de transporte:'
+.print 'Preço da encomenda após adicao da taxa de transporte: '
 
 INSERT INTO Transportadora(
                                idTransportadora,

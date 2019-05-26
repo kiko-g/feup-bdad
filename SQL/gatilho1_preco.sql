@@ -1,14 +1,20 @@
+.mode columns
+.headers on
+.nullvalue NULL
+
 CREATE TRIGGER preco_Encomenda
 AFTER INSERT ON Encomenda
 FOR EACH ROW
 BEGIN
+SELECT
 CASE
 WHEN(NEW.idTransportadora IS NOT NULL)
   UPDATE Encomenda
     SET preçoFinal = (SELECT preço FROM Transportadora 
-                        WHERE Transportadora.idTransportadora = NEW.idTransportadora)
-  WHERE NEW.idEncomenda = Encomenda.idEncomenda
-END;
+    WHERE Transportadora.idTransportadora = NEW.idTransportadora)
+    WHERE NEW.idEncomenda = Encomenda.idEncomenda
+    END;
+
 SELECT
 CASE
 WHEN(NEW.preçoFinal > 0)
