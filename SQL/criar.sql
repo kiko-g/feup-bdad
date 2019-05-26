@@ -170,13 +170,13 @@ CREATE TABLE Entrega (
 );
 
 -- Table: Funcionario
-CREATE TABLE Funcionario (
-    NIF        INT     REFERENCES Pessoa (NIF) ON DELETE CASCADE
+CREATE TABLE Funcionario(
+    NIF INTEGER REFERENCES Pessoa (NIF) ON DELETE CASCADE
                                                ON UPDATE CASCADE
                        NOT NULL
                        PRIMARY KEY,
-    disponivel BOOLEAN DEFAULT (false) 
-                       NOT NULL
+    disponivel BOOLEAN DEFAULT (false)
+                       NOT NULL                   
 );
 
 -- Table: Lacticinios
