@@ -4,4 +4,4 @@
 
 PRAGMA foreign_keys = ON;
 
-DROP TRIGGER IF EXISTS preco_Encomenda;
+DROP TRIGGER IF EXISTS insertEncomenda;
