@@ -31,3 +31,5 @@ SELECT idTransportadora AS 'ID da Transportadora', idEncomenda AS 'ID da Encomen
         morada AS 'Morada da Entrega'
 FROM Entrega WHERE idEncomenda = 10;
 
+.print ''
+.print ''

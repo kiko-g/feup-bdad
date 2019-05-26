@@ -4,7 +4,8 @@
 
 PRAGMA foreign_keys = ON;
 
--- Incrementa o preço final da encomenda de acordo com a quantidade pedida e decrementa o stock da loja
+-- Incrementa o preço final da encomenda de acordo com a 
+-- quantidade pedida do produto comprado e decrementa o stock da loja
 
 CREATE TRIGGER insertQuantidade
 AFTER INSERT ON QuantidadePedida

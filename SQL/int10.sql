@@ -1,6 +1,6 @@
-.mode	columns
-.headers	on
-.nullvalue	NULL
+.mode columns
+.headers on
+.nullvalue NULL
 
 -- 10 Nome do funcionário que respondeu a mais pedidos de apoio
 

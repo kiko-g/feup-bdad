@@ -1,10 +1,9 @@
-.mode	columns
-.headers	on
+.mode columns
+.headers on
 .nullvalue	NULL
 
 -- 1 Todos os clientes que ja fizeram um pedido de apoio
 
-CREATE VIEW viewClientsWithTickets AS
 SELECT idPedido, data, funcionarioNIF, clienteNIF, email, nome, morada, telemovel FROM
   (Suporte
   INNER JOIN Cliente

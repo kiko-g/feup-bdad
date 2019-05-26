@@ -17,5 +17,4 @@ GROUP BY codigoBarras;
 
 SELECT A.codigoBarras AS 'Codigo de Barras', nome AS 'Nome', marca AS 'Marca', preço AS 'Preço', desconto AS 'Desconto', quantidade AS 'Quantidade'
   FROM (Produto INNER JOIN  numeroComprasProduto ON numeroComprasProduto.codigoBarras = Produto.codigoBarras) AS A
-ORDER BY quantidade DESC
-; 
+ORDER BY quantidade DESC; 

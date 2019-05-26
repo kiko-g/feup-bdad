@@ -175,8 +175,13 @@ CREATE TABLE Funcionario(
                                                ON UPDATE CASCADE
                        NOT NULL
                        PRIMARY KEY,
-    disponivel BOOLEAN DEFAULT (false)
-                       NOT NULL                   
+    disponivel BOOLEAN DEFAULT false
+                       NOT NULL
+
+-- possivel conflito "near line 173"
+-- default (false) 
+-- versus                   
+-- default false
 );
 
 -- Table: Lacticinios

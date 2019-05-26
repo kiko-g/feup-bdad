@@ -4,7 +4,8 @@
 
 -- inserir uma encomenda
 -- preço final = preço da transportadora
--- criar a classe entrega, acrescentar um coiso nessa classe e pôr o id da encomanda, id da transportadora e morada do cliente
+
+-- acrescentar um tuplo na classe entrega, pôr o id da encomanda, id da transportadora e morada do cliente
 
 PRAGMA foreign_keys = ON;
 

@@ -4,7 +4,7 @@
 
 PRAGMA foreign_keys = ON;
 
-
+.print ''
 .print ''
 .print 'Preço da encomenda:'
 
@@ -38,3 +38,5 @@ INSERT INTO QuantidadePedida(
 SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco Final da Encomenda' 
   FROM Encomenda WHERE idEncomenda = 300;
 
+.print ''
+.print ''
