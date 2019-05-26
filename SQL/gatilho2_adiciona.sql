@@ -10,10 +10,14 @@ CREATE TRIGGER insertQuantidade
 AFTER INSERT ON QuantidadePedida
 FOR EACH ROW
 WHEN(NEW.quantidade > 0) BEGIN
-    UPDATE Encomenda SET preçoFinal = preçoFinal + NEW.quantidade * (SELECT preço FROM Produto WHERE Produto.codigoBarras = NEW.codigoBarras) * 
-                                            (1 - (SELECT desconto FROM Produto WHERE Produto.codigoBarras = NEW.codigoBarras) / 100)
-    WHERE NEW.idEncomenda = Encomenda.idEncomenda;
 
-    UPDATE Stock SET stock = stock - NEW.quantidade
-    WHERE NEW.codigoBarras = Stock.codigoBarras;
+UPDATE Encomenda 
+
+SET preçoFinal = preçoFinal + NEW.quantidade * (SELECT preço FROM Produto 
+WHERE Produto.codigoBarras = NEW.codigoBarras) * (1 - (SELECT desconto 
+FROM Produto WHERE Produto.codigoBarras = NEW.codigoBarras) / 100)
+WHERE NEW.idEncomenda = Encomenda.idEncomenda;
+
+UPDATE Stock SET stock = stock - NEW.quantidade
+WHERE NEW.codigoBarras = Stock.codigoBarras;
 END;
