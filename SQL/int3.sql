@@ -5,7 +5,7 @@
 -- 3 
 -- Todos os clientes que ja recorreram a uma transportadora especificada ('Runner' neste caso)
 
-create view ClienteTransp 
+.print ''
 
 SELECT * FROM Cliente
   WHERE Cliente.NIF IN(
@@ -13,3 +13,6 @@ SELECT * FROM Cliente
       WHERE idTransportadora IN (
         SELECT idTransportadora FROM Transportadora
           WHERE nome LIKE 'Runner'));
+
+.print ''
+          

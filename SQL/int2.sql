@@ -1,8 +1,12 @@
-.mode	columns
-.headers	on
-.nullvalue	NULL
+.mode columns
+.headers on
+.nullvalue NULL
 
 -- 2 Produtos mais vendidos do mês passado
+
+.print ''
+.print ''
+
 
 CREATE VIEW IF NOT EXISTS EncomendasMesPassado AS
 SELECT idEncomenda FROM Encomenda
@@ -18,3 +22,7 @@ GROUP BY codigoBarras;
 SELECT A.codigoBarras AS 'Codigo de Barras', nome AS 'Nome', marca AS 'Marca', preço AS 'Preço', desconto AS 'Desconto', quantidade AS 'Quantidade'
   FROM (Produto INNER JOIN  numeroComprasProduto ON numeroComprasProduto.codigoBarras = Produto.codigoBarras) AS A
 ORDER BY quantidade DESC; 
+
+
+.print ''
+.print ''

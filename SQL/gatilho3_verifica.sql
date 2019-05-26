@@ -4,6 +4,8 @@
 
 PRAGMA foreign_keys = ON;
 
+.print ''
+.print ''
 .print 'Estado do Stock:'
 
 SELECT Stock.idLoja AS 'ID da Loja', Stock.codigoBarras AS 'Codigo de Barras', 
@@ -30,3 +32,6 @@ INSERT INTO Produto(
 SELECT Stock.idLoja AS 'ID da Loja', Stock.codigoBarras AS 'Codigo de Barras', 
         Stock.stock AS 'Quantidade em Stock' 
 FROM Stock; 
+
+.print ''
+.print ''

@@ -4,6 +4,9 @@
 
 -- 5
 -- Todas as encomendas feitas para o endereço de um cliente
+.print ''
+.print ''
+
 
 SELECT * FROM Encomenda
   WHERE idEncomenda IN (
@@ -11,3 +14,5 @@ SELECT * FROM Encomenda
       Entrega, (Cliente INNER JOIN Pessoa 
         ON Cliente.NIF = Pessoa.NIF) AS A
           WHERE Entrega.morada = A.morada);
+
+.print ''

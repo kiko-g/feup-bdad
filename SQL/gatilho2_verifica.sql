@@ -19,7 +19,7 @@ INSERT INTO Encomenda(
                       0)
 ;
 
-SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco Final da Encomenda' 
+SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco da Encomenda' 
   FROM Encomenda WHERE idEncomenda = 300;
 
 .print ''
@@ -35,7 +35,7 @@ INSERT INTO QuantidadePedida(
                              4)
 ;
 
-SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco Final da Encomenda' 
+SELECT idEncomenda AS 'ID da Encomenda', preçoFinal AS 'Preco da Encomenda' 
   FROM Encomenda WHERE idEncomenda = 300;
 
 .print ''
