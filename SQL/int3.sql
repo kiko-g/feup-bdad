@@ -3,11 +3,13 @@
 .nullvalue NULL
 
 -- 3 
--- Todos os clientes que ja recorreram a uma transportadora
+-- Todos os clientes que ja recorreram a uma transportadora especificada ('Runner' neste caso)
+
+create view ClienteTransp 
 
 SELECT * FROM Cliente
   WHERE Cliente.NIF IN(
     SELECT NIF FROM Encomenda
       WHERE idTransportadora IN (
         SELECT idTransportadora FROM Transportadora
-          WHERE nome LIKE 'Runner'    ));
+          WHERE nome LIKE 'Runner'));

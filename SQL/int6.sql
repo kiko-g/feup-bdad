@@ -3,7 +3,7 @@
 .nullvalue	NULL
 
 -- 6
--- Preco final medio das encomendas do cliente anterior
+-- Preco medio das encomendas de cada cliente
 
 SELECT A.NIF, A.email, avg(preçoFinal) FROM
 (Cliente INNER JOIN Encomenda ON Cliente.NIF = Encomenda.NIF)
