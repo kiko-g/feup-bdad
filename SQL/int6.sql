@@ -8,4 +8,4 @@
 SELECT Cliente.NIF, email, avg(preçoFinal) AS 'Preço Final medio' 
 FROM Cliente, Encomenda 
 WHERE Cliente.NIF = Encomenda.NIF
-AS A GROUP BY A.NIF;
+GROUP BY Cliente.NIF;
