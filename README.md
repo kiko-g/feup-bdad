@@ -1,4 +1,4 @@
-# MIEIC Data Bases (BDAD)
+# BDAD 2018-2019
 
-### 2ND YEAR 2ND SEMESTER
-> Here you can find project submissions and some simple SQL implementations
+##### Databases course repository (2nd year)
+Here you can find project submissions and some simple SQL implementations
